@@ -1,0 +1,23 @@
+// 要素アニメーション
+.inview {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1.4s, transform 0.8s;
+
+  &.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// 文字アニメーション
+.animate-title {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: opacity 1.4s, transform 0.8s;
+
+  &.show {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

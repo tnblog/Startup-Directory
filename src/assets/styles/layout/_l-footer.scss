@@ -1,0 +1,34 @@
+.footer {
+  background: $color-white;
+  margin: 120px 0 0;
+
+  &__inner {
+    padding: 120px 10px 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    @include mq(xs) {
+      display: block;
+    }
+  }
+
+  &__logo {
+    flex: 0 0 50%;
+  }
+
+
+  &__copy {
+    text-align: right;
+    flex: 0 0 50%;
+    font-weight: 600;
+    font-family: 'Cinzel', serif;
+
+    @include mq(xs) {
+      margin-top: 32px;
+    }
+  }
+}

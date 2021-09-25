@@ -1,0 +1,44 @@
+$mq-breakpoints-min: (
+  'xxs': '0px',
+  'xs': '441px',
+  'sm': '581px',
+  'md': '781px',
+  'lg': '961px',
+) !default;
+
+$mq-breakpoints-max: (
+  'xxs': '440px',
+  'xs': '580px',
+  'sm': '780px',
+  'md': '960px',
+  'lg': '1040px',
+) !default;
+
+@mixin mq-target($breakpoint: md) {
+  @media screen and (min-width: #{map-get($mq-breakpoints-min, $breakpoint)}) and (max-width: #{map-get($mq-breakpoints-max, $breakpoint)}) {
+    @content;
+  }
+}
+
+@mixin mq($breakpoint: md) {
+  @media screen and (max-width: #{map-get($mq-breakpoints-max, $breakpoint)}) {
+    @content;
+  }
+}
+
+@mixin absCenter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin clearfix {
+  &:after {
+    content: ".";
+    display: block;
+    clear: both;
+    height: 0;
+    visibility: hidden;
+  }
+}
