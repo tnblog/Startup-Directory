@@ -1,11 +1,17 @@
 .c-button {
+  cursor: pointer;
   display: block;
   color: $color-white;
-  background: $color-main;
+  background: $color-bg;
   width: 100%;
   letter-spacing: 0.12em;
   justify-content: center;
   transition: opacity 0.2s linear;
+  border: none;
+
+  a {
+    color: $color-white;
+  }
 
   &:hover {
     opacity: 0.5;
@@ -30,5 +36,9 @@
     @include mq(sm) {
       margin-top: 24px;
     }
+  }
+  &--full {
+    margin: 40px auto 0;
+    padding: 20px 14px;
   }
 }

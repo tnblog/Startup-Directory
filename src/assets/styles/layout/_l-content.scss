@@ -1,5 +1,13 @@
 .l-content {
+  position: relative;
   &__inner {
-    position: relative;
+  }
+
+  &__item {
+    &--left {
+    }
+
+    &--right {
+    }
   }
 }

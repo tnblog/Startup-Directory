@@ -92,13 +92,20 @@ function scripts() {
 
 function startAppServer() {
   server.init({
+    // port : 80,                     // browsersyncサーバが使うポート番号を変更できる
+    // proxy : "develop.wp/",     // ローカルにある「Site Domain」に合わせる
+    // notify: false,                 // ブラウザ更新時に出てくる通知を非表示にする
+    // open: "external",              // ローカルIPアドレスでサーバを立ち上げる
     server: {
       baseDir: './dist'
     }
   });
 
   watch('./src/assets/**/*.scss', styles);
+  watch('./src/assets/**/*.js', scripts);
   watch('./src/assets/**/*.scss').on('change', server.reload);
+  watch('./src/assets/**/*.js').on('change', server.reload);
+  watch("./**/*.php").on('change', server.reload);
 }
 
 const serve = series(parallel(styles, series(scripts)), startAppServer);

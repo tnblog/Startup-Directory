@@ -1,10 +1,13 @@
 .footer {
+  position: relative;
+  border-top: $line;
   background: $color-white;
-  margin: 120px 0 0;
+  margin: 80px 0 0;
 
   &__inner {
+    position: relative;
     padding: 120px 10px 40px;
-    max-width: 1200px;
+    max-width: $maxWidth;
     margin: 0 auto;
     margin: auto;
     display: flex;

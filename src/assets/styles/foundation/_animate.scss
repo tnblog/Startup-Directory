@@ -1,23 +1,63 @@
-// 要素アニメーション
-.inview {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 1.4s, transform 0.8s;
+// // 要素アニメーション
+// .inview {
+//   opacity: 0;
+//   transform: translateY(40px);
+//   transition: opacity 1.4s, transform 0.8s;
 
-  &.show {
-    opacity: 1;
-    transform: translateY(0);
+//   &.show {
+//     opacity: 1;
+//     transform: translateY(0);
+//   }
+// }
+
+// // 文字アニメーション
+// .animate-title {
+//   opacity: 0;
+//   transform: translateX(-40px);
+//   transition: opacity 1.4s, transform 0.8s;
+
+//   &.show {
+//     opacity: 1;
+//     transform: translateX(0);
+//   }
+// }
+
+
+// loader
+@keyframes loader {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
   }
 }
 
-// 文字アニメーション
-.animate-title {
-  opacity: 0;
-  transform: translateX(-40px);
-  transition: opacity 1.4s, transform 0.8s;
+@keyframes slide {
+  0% {
+    width: 0%;
+  }
+  50% {
+    width: 50%;
+  }
+  100% {
+    width: 100%;
+  }
+}
 
-  &.show {
-    opacity: 1;
-    transform: translateX(0);
+
+@keyframes sk-bouncedelay {
+  0% {
+    transform: scale(0);
+  }
+  40% {
+    transform: scale(1);
+  }
+  80% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(0);
   }
 }

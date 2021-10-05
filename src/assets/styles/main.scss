@@ -7,25 +7,41 @@
 @import "./foundation/base";
 @import "./foundation/animate";
 
+// - pulugin
+@import "./foundation/plugin/toc";
+@import "./foundation/plugin/prism";
+@import "./foundation/plugin/slick-theme";
+@import "./foundation/plugin/slick";
+
 //  --------------------
 //  layout
 //  --------------------
 @import "./layout/l-header";
+@import "./layout/l-drawer";
 @import "./layout/l-main";
 @import "./layout/l-content";
+@import "./layout/l-sidebar";
 @import "./layout/l-section";
 @import "./layout/l-footer";
 
 //  --------------------
 //  component
 //  --------------------
-@import "./component/c-box";
-@import "./component/c-button";
+@import "./component/heading";
+@import "./component/box";
+@import "./component/button";
+@import "./component/accordion";
+@import "./component/mask";
+@import "./component/pagination";
+@import "./component/breadcrumb";
+@import "./component/pageTopScroll";
+@import "./component/loader";
+@import "./component/pager";
+@import "./component/tab";
 
 //  --------------------
 //  utility
 //  --------------------
-@import "./utility/heading";
 @import "./utility/display";
 
 //  --------------------

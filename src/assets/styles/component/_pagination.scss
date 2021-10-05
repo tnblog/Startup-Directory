@@ -1,0 +1,35 @@
+.pagination {
+  margin: 40px 0 0;
+    ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      li {
+        margin: 8px 5px;
+
+        .current {
+          color: $color-white;
+          background: $color-bg;
+        }
+
+        a,span {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 35px;
+          height: 35px;
+          color: $color-main;
+          border: 1px solid $color-bg;
+          border-radius: 100%;
+          transition: all .3s ease;
+
+          &:hover {
+            background: $color-bg;
+            color: $color-white;
+          }
+        }
+      }
+    }
+  }

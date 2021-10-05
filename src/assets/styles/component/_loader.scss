@@ -1,0 +1,22 @@
+.loader {
+  align-items: center;
+  background: $color-white;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 999;
+  &::after {
+    animation: loader 1s linear infinite;
+    border: 1px solid $color-bg;
+    border-radius: 50%;
+    border-right: $color-bg;
+    border-top: $color-bg;
+    content: "";
+    height: 70px;
+    width: 70px;
+  }
+}

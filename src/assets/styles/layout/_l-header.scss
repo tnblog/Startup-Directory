@@ -1,7 +1,189 @@
-.header {
+.l-header {
+  height: 84px;
+  position: relative;
+  // position: fixed;
+  // position: absolute;
+  // top: 0;
+  // left: 0;
+  z-index: 10;
+  width: 100%;
+  color: $color-main;
+  background: $color-bg;
+
   &__inner {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: 100%;
+    padding: 20px 40px;
+    @include mq(sm) {
+      padding: 10px 20px;
+    }
   }
+
+  &__left {
+    position: relative;
+  }
+
+  &__mid {
+    max-width: 460px;
+    width: 100%;
+    @include absCenter;
+  }
+
+  &__right {
+
+  }
+
+  &__spMenu {
+    background: $color-white;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 30;
+    height: 100vh;
+    max-width: 400px;
+    width: 100%;
+    transform: translateX(100vw);
+    transition: .8s ease;
+    @include mq(sm) {
+      width: 80%;
+    }
+  }
+
+  &__box {
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: $line;
+  }
+
+  &__list {
+    padding: 0;
+    list-style: none;
+    &--menu {
+      display: flex;
+      align-items: center;
+      .l-header__item--menu a::after:last-child {
+        height: 0;
+      }
+    }
+    &--spMenu {
+      display: none;
+    }
+  }
+
+  &__item {
+    &--logo {
+      display: block;
+      font-size: 1.8rem;
+      color: $color-white;
+      transition: opacity 0.3s;
+      &:hover {
+        opacity: 0.5;
+      }
+    }
+
+    &--menu {
+      width: calc(100% / 3);
+      a {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        letter-spacing: 0.1em;
+        color: $color-white;
+        &::before {
+          content: "";
+          position: absolute;
+          bottom: -6px;
+          left: 0;
+          width: 100%;
+          height: 1px;
+          transform: scale(0, 1);
+          transition: transform .4s ease;
+          background: $color-blue;
+        }
+        &:hover::before,
+        &:focus::before {
+          transform: scale(1, 1);
+          transform-origin: top left;
+        }
+
+        &::after {
+          content: "";
+          position: absolute;
+          top: 50%;
+          right: 0;
+          width: 1px;
+          height: 24px;
+          background: $color-grey-light-2;
+          transform: translateY(-50%);
+        }
+        p {
+          text-transform: uppercase;
+          font-weight: 500;
+        }
+        span {
+          font-size: 1rem;
+          font-weight: 500;
+          color: $color-grey-dark-3;
+        }
+      }
+    }
+
+    &--spMenu {
+      position: relative;
+      background: $color-grey-light-5;
+      border-bottom: 1px solid #E8E8E8;
+      transition: transform .3s ease;
+      &:hover {
+        transform: translateX(5px);
+      }
+
+      a {
+        font-size: 1.4rem;
+        font-weight: 300;
+        color: $color-grey-dark-1;
+        text-transform: uppercase;
+        text-align: left;
+        display: block;
+        padding: 20px 60px;
+        transition: opacity .3s ease .0s;
+      }
+    }
+  }
+
+  &__heading {
+    &--spMenu {
+      padding: 10px 10px 10px 40px;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      color: $color-main;
+      @include mq(xs) {
+        padding: 10px 10px 10px 20px;
+      }
+      h4 {
+        position: relative;
+        margin: 0;
+        font-size: 1.8rem;
+        font-weight: normal;
+        @include mq(xs) {
+          font-size: 1.6rem;
+        }
+      }
+      span {
+        font-size: 1rem;
+        padding-left: 14px;
+      }
+    }
+  }
+}
+
+
+.l-header__mid .l-header__list .l-header__item--menu:last-of-type > a::after {
+  content: "";
+  width: 0;
 }

@@ -1,0 +1,46 @@
+.toc {
+  position: sticky;
+  top: 0;
+  &__list {
+    padding: 0;
+    list-style: none;
+
+    .widget {
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      background: $color-white;
+      padding: 10px;
+      border-radius: 4px;
+
+      .widgettitle {
+        color: $color-white;
+        font-size: 1.8rem;
+        text-align: center;
+        padding: 4px 0;
+        margin-bottom: 16px;
+        font-weight: 300;
+        background: $color-bg;
+        border-radius: 4px;
+      }
+
+      .toc_widget_list {
+        list-style: none;
+        li {
+          // transition: transform .4s ease;
+          // &:hover {
+          //   transform: translateX(5px);
+          // }
+          a {
+            display: block;
+            padding: 0 0 6px;
+            color: $color-blue;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+.addtoany_share_save_container {
+  margin: 80px auto 0 !important;
+}

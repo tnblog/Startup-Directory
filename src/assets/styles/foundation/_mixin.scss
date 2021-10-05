@@ -26,11 +26,31 @@ $mq-breakpoints-max: (
   }
 }
 
+@mixin flex {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+@mixin bgCover {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 @mixin absCenter {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+@mixin absAll {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 
 @mixin clearfix {
