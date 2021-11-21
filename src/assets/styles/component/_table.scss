@@ -1,0 +1,37 @@
+.c-table {
+  width: 100%;
+  border: $line;
+  border-collapse: collapse;
+  border-spacing: 0;
+  &--overview {
+    tr {
+      border-bottom: $line;
+    }
+
+    th,
+    td {
+      text-align: left;
+      font-size: 1.2rem;
+      font-weight: 300;
+      padding: 11px 25px;
+      @include mq(sm) {
+        display: block;
+      }
+    }
+
+    th {
+      vertical-align: top;
+      background: $color-bg;
+      width: 147px;
+      text-align: left;
+      color: $color-white;
+      @include mq(sm) {
+        width: 100%;
+      }
+    }
+
+    td {
+      background: $color-white;
+    }
+  }
+}

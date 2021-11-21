@@ -1,0 +1,68 @@
+</div>
+
+<footer class="l-footer" id="footer">
+
+  <p id="page-top" class="pageTopScroll u-dp-pc"><a href="#"><i class="fas fa-angle-up"></i></a></p>
+
+  <div class="l-footer__wrap">
+
+    <p class="l-footer__logo">
+      <a href="/">下北沢キャンプ場</a>
+    </p>
+    <p class="l-footer__copy">
+      @2021 s.tnblog
+    </p>
+
+  </div>
+</footer>
+
+
+<% let filePath = jsonData.pages[pageId].filePath %>
+
+
+<!-- <script src="/assets/scripts/vendors/gsap.min.js"></script> -->
+<script>
+  var userAgent = window.navigator.userAgent.toLowerCase();
+
+  if (userAgent.indexOf('msie') != -1 || userAgent.indexOf('trident') != -1) {
+    window.location.href('https://www.google.com/?hl=ja')
+  }
+</script>
+
+<!-- vendors -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/rellax/1.12.1/rellax.min.js"></script>
+<script src="<%= filePath %>assets/scripts/vendors/stickyfill.min.js"></script>
+<script src="<%= filePath %>assets/scripts/vendors/swiper-bundle.min.js"></script>
+
+<script>
+  new LuminousGallery(document.querySelectorAll('.zoom'));
+</script>
+
+<!-- scripts -->
+<script src="<%= filePath %>assets/scripts/swiper.js"></script>
+<script src="<%= filePath %>assets/scripts/function.js"></script>
+
+<% if (pageId === 'home'){ %>
+<script src="<%= filePath %>assets/scripts/index.js"></script>
+<% } else if (pageId === 'about') { %>
+<script src="<%= filePath %>assets/scripts/about.js"></script>
+<% } else if (pageId === 'blog') { %>
+<script src="<%= filePath %>assets/scripts/vendors/isotope.pkgd.min.js"></script>
+<% } else { %>
+<% } %>
+
+<script>
+  var rellax = new Rellax(' .js-rellax ', {
+
+    // 中央寄せ
+    center: true
+
+  });
+</script>
+
+<script src="<%= filePath %>assets/scripts/main.js"></script>
+
+</body>
+
+</html>

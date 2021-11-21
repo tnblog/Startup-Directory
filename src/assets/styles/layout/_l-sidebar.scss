@@ -1,10 +1,112 @@
-.sidebar {
+.l-sidebar {
   section {
-    margin: 10px 0 0;
-    padding: 10px 0 0;
-    &:first-of-type {
-      padding: 0;
-      margin: 0;
+    margin: 0 0 60px;
+  }
+
+  &__list {
+    padding: 0;
+    list-style: none;
+  }
+
+  &__item {
+    &--category {
+      text-align: left;
+      // border: 1px solid $color-grey-light-4;
+      font-size: 1.5rem;
+      position: relative;
+      transition: transform .3s ease;
+
+      &:hover,
+      &:focus {
+        transform: translateX(10px);
+      }
+
+      a {
+        display: block;
+        padding: 8px 20px 8px 0;
+        text-transform: uppercase;
+      }
+    }
+
+    &--article {
+      display: flex;
+      margin: 0 0 14px;
+      @include mq(md) {
+        display: initial;
+      }
+      &:nth-child(3) {
+        margin: 0;
+      }
+
+      &Button {
+        margin: 5px 0 0;
+      }
+    }
+
+    &--tag {
+
+    }
+  }
+
+  &__detail {
+    &--article {
+      text-align: left;
+      padding: 5px 10px 5px 14px;
+      @include flex($justify:space-between);
+      flex-direction: column;
+      @include mq(md) {
+        padding: 0;
+      }
+    }
+  }
+
+  &__img {
+    &--article {
+      width: 180px;
+      transform: all .3s ease;
+      @include mq(md) {
+        width: 100%;
+      }
+      &::before {
+        padding-top: 90%;
+        @include mq(sm) {
+          padding-top: 70%;
+        }
+      }
+    }
+  }
+
+  &__heading {
+    &--info {
+      font-size: 2rem;
+      padding-bottom: 12px;
+      padding: 0 0 12px;
+      margin: 0 0 20px;
+      text-transform: uppercase;
+      font-weight: 300;
+      text-align: left;
+      position: relative;
+      line-height: 1.7;
+      border-bottom: 1px solid $color-grey-light-4;
+
+      span {
+        position: relative;
+        font-size: 1.2rem;
+        display: block;
+        padding-left: 26px;
+
+        &::before {
+          content: "";
+          @include absolute($top:50%, $left:0);
+          width: 20px;
+          height: 1px;
+          background: $color-bg;
+        }
+      }
+    }
+
+    &--article {
+      font-size: 1.2rem;
     }
   }
 }

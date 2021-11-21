@@ -1,13 +1,6 @@
 .l-content {
   position: relative;
-  &__inner {
-  }
-
-  &__item {
-    &--left {
-    }
-
-    &--right {
-    }
-  }
+  z-index: 1;
+  // background: rgb(248, 247, 247);
+  // background: $color-white;
 }

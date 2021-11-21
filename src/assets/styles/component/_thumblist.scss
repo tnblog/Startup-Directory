@@ -1,0 +1,127 @@
+.c-thumblist {
+  position: relative;
+  list-style: none;
+  padding: 0;
+  @include column4(23.6%);
+
+  @include mq(sm) {
+    @include column4(32%);
+  }
+
+
+  &__item {
+    position: relative;
+    // display: flex;
+    @include flexBasis($fb:23.6%, $fb-md:32%, $fb-sm:48%, $fb-xs:100%);
+
+    & > a {
+      display: block;
+      content: "";
+      @include absolute(0,0,0,0);
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
+  }
+
+  &__img {
+    border-radius: 12px;
+    box-shadow: $box-shadow-light-1;
+    border: 5px solid $color-white;
+    overflow: hidden;
+    flex: 0 0 200px;
+
+    &::before {
+      padding-top: 74%;
+    }
+  }
+
+  &__body {
+    position: relative;
+    text-align: left;
+
+    &--row {
+      padding: 0 60px 0 20px;
+      flex-grow: 1;
+    }
+
+    &--column {
+      margin: 10px 0 0;
+      min-height: 110px;
+    }
+  }
+
+  &__meta {
+    text-align: left;
+    @include flex($align:center);
+
+    .-price {
+      color: $color-grey-dark-2;
+      font-size: 1.4rem;
+    }
+
+    .-date {
+      font-family: Hiragino Sans;
+      font-size: 1.2rem;
+      color: $color-grey-dark-2;
+      font-size: 1.2rem;
+      letter-spacing: 0.08em;
+    }
+
+    .-tag {
+      position: relative;
+      z-index: 2;
+      margin-left: 16px;
+      background: $color-bg;
+      border-radius: 10px;
+
+      a {
+        font-size: 1rem;
+        color: $color-white;
+        font-weight: 500;
+        letter-spacing: 0.1em;
+        position: relative;
+        display: inline-block;
+        padding: 2px 8px 2px 16px;
+
+        &::after {
+          content: "";
+          @include absolute($top:50%, $left:5px);
+          z-index: 2;
+          width: 6px;
+          height: 6px;
+          margin-top: -3px;
+          background: $color-white;
+          border-radius: 100%;
+        }
+      }
+    }
+  }
+
+  &__heading {
+    text-align: left;
+    margin: 10px 0;
+    overflow: hidden;
+    font-weight: 600;
+    letter-spacing: 0.075em;
+  }
+
+  &__txt {
+    text-align: left;
+    font-size: 1.2rem;
+
+    .-cate {
+      font-weight: 600;
+      color: $color-grey-dark-2;
+    }
+  }
+
+  &__button {
+    @include absolute($bottom:4px, $left:20px);
+
+    a {
+      font-weight: 700;
+      font-size: 1.2rem;
+    }
+  }
+}

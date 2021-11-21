@@ -14,36 +14,51 @@
 @import "./foundation/plugin/slick";
 
 //  --------------------
+//  component
+//  --------------------
+@import "./component/picture";
+@import "./component/heading";
+@import "./component/pagination";
+@import "./component/pager";
+@import "./component/arrow";
+@import "./component/table";
+@import "./component/overlay";
+@import "./component/box";
+@import "./component/button";
+@import "./component/breadcrumb";
+@import "./component/thumblist";
+@import "./component/newslist";
+@import "./component/media";
+@import "./component/label";
+@import "./component/search";
+@import "./component/taglist";
+
+//  --------------------
 //  layout
 //  --------------------
 @import "./layout/l-header";
-@import "./layout/l-drawer";
 @import "./layout/l-main";
 @import "./layout/l-content";
+@import "./layout/l-drawer";
 @import "./layout/l-sidebar";
 @import "./layout/l-section";
+@import "./layout/l-dropdown";
 @import "./layout/l-footer";
 
 //  --------------------
-//  component
+//  js
 //  --------------------
-@import "./component/heading";
-@import "./component/box";
-@import "./component/button";
-@import "./component/accordion";
-@import "./component/mask";
-@import "./component/pagination";
-@import "./component/breadcrumb";
-@import "./component/pageTopScroll";
-@import "./component/loader";
-@import "./component/pager";
-@import "./component/tab";
+@import "./js/accordion";
+@import "./js/tab";
+@import "./js/pageTopScroll";
 
 //  --------------------
 //  utility
 //  --------------------
 @import "./utility/display";
+@import "./utility/rating";
 
 //  --------------------
 //  project
 //  --------------------
+@import "./project/single";

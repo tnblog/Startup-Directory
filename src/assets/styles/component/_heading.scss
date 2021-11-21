@@ -1,68 +1,52 @@
-.heading {
-  &--single {
-    color: $color-white;
-    text-align: left;
-    font-size: 2.8rem;
-    font-weight: 200;
-    @include mq(sm) {
-      font-size: 2.2rem;
-      text-align: center;
-    }
-  }
-
-  &--section {
-    position: relative;
-    font-size: 2.6rem;
-    font-weight: 400;
-    text-align: left;
+.c-heading {
+  &__main {
     margin: 0 0 40px;
-    padding-left: 70px;
-    &::before {
-      content: "";
-      position: absolute;
-      width: 40px;
-      height: 4px;
-      background: $color-bg;
-      top: 50%;
-      transform: translateY(-50%);
-      left: 0;
-    }
-    @include mq(xs) {
-      margin: 0 0 40px;
-      font-size: 2.4rem;
-    }
-  }
 
-  &--page {
-    color: $color-white;
-    font-size: 3.6rem;
-    letter-spacing: 0.1em;
+    @include mq(md) {
+      margin: 80px 0 30px;
+    }
 
-    span {
-      font-weight: 400;
-      font-size: 1.4rem;
-      margin: 10px 0 0;
+    .-en {
       display: block;
-    }
-  }
-
-  &--sidebar {
-    position: relative;
-    padding: 10px 0 0 20px;
-    h2 {
-      text-align: left;
-      text-transform: uppercase;
-      font-size: 1.6rem;
-      font-weight: 400;
-      letter-spacing: .1em;
-
-      &::before {
-        content: "";
-        position: absolute;
-        height: 20px;
-        border-left: 3px solid $color-grey-dark-2;
-        margin: -.1px 0 0 -20px;
+      margin-top: 8px;
+      font-size: 4.4rem;
+      font-weight: 300;
+      letter-spacing: 0.06em;
+      @include mq(sm) {
+        font-size: 3.2rem;
       }
     }
+
+    .-ja {
+      display: block;
+      color: $color-green-light-2;
+      @include flex($align:center);
+      font-size: 1.6rem;
+      line-height: 1;
+      font-weight: 600;
+
+      &.center {
+        justify-content: center;
+      }
+
+      &.end {
+        justify-content: flex-end;
+      }
+
+      &::after {
+        content: "";
+        height: 1px;
+        width: 32px;
+        font-size: 1.6rem;
+        background: $color-green-light-2;
+        margin-left: 12px;
+      }
+
+      @include mq(sm) {
+        font-size: 1.2rem;
+      }
+    }
+
+
   }
 }

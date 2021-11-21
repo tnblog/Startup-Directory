@@ -1,63 +1,228 @@
-// // 要素アニメーション
-// .inview {
-//   opacity: 0;
-//   transform: translateY(40px);
-//   transition: opacity 1.4s, transform 0.8s;
+$pattern: ("up": translateY(6px),
+  "down": translateY(-6px),
+  "left": translateX(40px),
+  "right": translateX(-40px));
 
-//   &.show {
-//     opacity: 1;
-//     transform: translateY(0);
-//   }
-// }
+/*-----------------------------------------------------
 
-// // 文字アニメーション
-// .animate-title {
-//   opacity: 0;
-//   transform: translateX(-40px);
-//   transition: opacity 1.4s, transform 0.8s;
+ScrollTrigger
 
-//   &.show {
-//     opacity: 1;
-//     transform: translateX(0);
-//   }
-// }
+-----------------------------------------------------*/
+.js-scroll {
+  &__fadeIn {
+    &--up {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 1.6s, transform 1s;
+      // transition-delay: .4s;
 
-
-// loader
-@keyframes loader {
-  0% {
-    transform: rotate(0);
+      &.is-anim {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
   }
 
-  100% {
-    transform: rotate(360deg);
+  &__cover {
+    position: relative;
+    overflow: hidden;
+
+    &--slide {
+
+      &::before,
+      &::after {
+        content: '';
+        @include absolute($left:0, $top:0);
+        height: 100%;
+        width: 100%;
+        transition: transform .8s cubic-bezier(0.61, 1, 0.88, 1);
+      }
+
+      &::before {
+        background: $color-green-light-2;
+        transition-delay: .2s;
+        z-index: 10;
+      }
+
+      &::after {
+        background: $color-white;
+        z-index: 11;
+      }
+
+      &.is-anim {
+
+        &::before,
+        &::after {
+          transform: translateX(100%);
+        }
+      }
+    }
+  }
+
+  &__imgZoom {
+    opacity: 0;
+
+    &.is-anim {
+      opacity: 1;
+      transition: transform 1.4s ease;
+      @include animation($name: kf-img-show,
+        $duration: 1s,
+        $timing-function: ease-in-out,
+        $fill-mode: normal);
+
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+  }
+
+  &__scale {
+    transform: scale(0.9);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1.4s cubic-bezier(0.61, 1, 0.88, 1), transform 1.4s cubic-bezier(0.61, 1, 0.88, 1);
+
+    &.is-anim {
+      opacity: 1;
+      transform: scale(1);
+      visibility: visible;
+    }
+  }
+
+  &__slide {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 1.4s cubic-bezier(0.25, 0.25, 0.75, 0.75),visibility 1.4s cubic-bezier(0.25, 0.25, 0.75, 0.75);
+    &.is-anim {
+      animation: kf-animate-slide 2s cubic-bezier(0.19, 1, 0.22, 1) both;
+      visibility: visible;
+      opacity: 1;
+    }
   }
 }
 
-@keyframes slide {
-  0% {
-    width: 0%;
+.animate-heading {
+  opacity: 0;
+
+  &.inview {
+    opacity: 1;
+    & .char {
+      display: inline-block;
+    }
   }
+
+  & .char {
+    opacity: 0;
+  }
+}
+
+
+.animate-heading.inview .char {
+  @include animation($name: kf-animate-chars,
+    $duration: .65s,
+    $timing-function: ease,
+    $fill-mode: both);
+
+  @for $i from 1 through 99 {
+    &:nth-child(#{$i}) {
+      animation-delay: $i * 0.1s;
+    }
+  }
+}
+
+/*-----------------------------------------------------
+
+keyframe
+
+-----------------------------------------------------*/
+
+@keyframes fluidrotate {
+
+  0%,
+  100% {
+    border-radius: 63% 37% 54% 46%/55% 48% 52% 45%;
+  }
+
+  14% {
+    border-radius: 40% 60% 54% 46%/49% 60% 40% 51%;
+  }
+
+  28% {
+    border-radius: 54% 46% 38% 62%/49% 70% 30% 51%;
+  }
+
+  42% {
+    border-radius: 61% 39% 55% 45%/61% 38% 62% 39%;
+  }
+
+  56% {
+    border-radius: 61% 39% 67% 33%/70% 50% 50% 30%;
+  }
+
+  70% {
+    border-radius: 50% 50% 34% 66%/56% 68% 32% 44%;
+  }
+
+  84% {
+    border-radius: 46% 54% 50% 50%/35% 61% 39% 65%;
+  }
+
+}
+
+@keyframes kf-img-show {
+  0% {
+    opacity: 0;
+    transform: scale(1.1);
+  }
+
   50% {
-    width: 50%;
+    transform: scale(1);
+    // opacity: 1;
   }
+
+  // 50.1% {
+  // }
+
   100% {
-    width: 100%;
+    opacity: 1;
   }
 }
 
-
-@keyframes sk-bouncedelay {
-  0% {
-    transform: scale(0);
-  }
-  40% {
-    transform: scale(1);
-  }
-  80% {
-    transform: scale(0);
-  }
+@keyframes animationZoom1 {
   100% {
-    transform: scale(0);
+    transform: scale(1.1)
+  }
+}
+
+@keyframes animationZoom2 {
+  50% {
+    transform: scale(1.05)
+  }
+}
+
+@keyframes kf-animate-chars {
+  0% {
+    opacity: 0;
+    transform: translateX(50%);
+    // transform: translateY(50%);
+    color: $color-white;
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    // transform: translateY(0);
+  }
+}
+
+@keyframes kf-animate-slide {
+  0% {
+    opacity: 0;
+    transform: translateX(10%)
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0)
   }
 }

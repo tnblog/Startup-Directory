@@ -1,20 +1,28 @@
-.breadcrumb {
-  position: absolute;
-  top: 30px;
-  left: 0;
-  &__inner {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    color: $color-grey-dark-2;
-    font-size: 1.3rem;
-    @include mq(xs) {
-      font-size: 1rem;
+.c-bread {
+  &__list {
+    position: relative;
+    @include flex($align:center,$justify:center,$wrap:wrap);
+  }
+
+  &__item {
+    margin: 0 10px;
+    @include flex($align:center,$justify:center);
+
+    a {
+      color: $color-white;
+      font-size: 1.6rem;
     }
-    span {
-      a {
-        color: $color-blue;
-      }
+  }
+
+  &__border {
+    position: relative;
+    width: 20px;
+    &::before {
+      @include absolute($left:0);
+      content: "";
+      height: 2px;
+      width: 100%;
+      background: $color-white;
     }
   }
 }

@@ -1,0 +1,10 @@
+.c-mask {
+  position: relative;
+
+  &::after {
+    content: "";
+    @include absolute(0,0,0,0);
+    height: 100%;
+    width: 100%;
+  }
+}

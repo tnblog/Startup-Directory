@@ -1,0 +1,137 @@
+<% let title = (pageId === 'home') ? jsonData.siteInfo.name : jsonData.pages[pageId].name + jsonData.siteInfo.name%>
+<% let description = jsonData.pages[pageId].description %>
+<% let filePath = jsonData.pages[pageId].filePath %>
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %></title>
+  <meta name="description" content="<%= description %>">
+
+  <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+
+  <link rel="icon" href="<%= filePath %>assets/images/icon/favicon-32x32.png" sizes="32x32">
+  <link rel="dns-prefetch" href="//fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&family=Poppins:ital,wght@0,100;0,200;1,100&family=Cinzel:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <link href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+  <link href="<%= filePath %>assets/styles/vendors/swiper-bundle.min.css" rel="stylesheet">
+
+  <link href="<%= filePath %>assets/styles/main.css" rel="stylesheet">
+  <script crossorigin="anonymous" src="//polyfill.io/v3/polyfill.js?features=IntersectionObserver"></script>
+
+</head>
+
+
+
+<body data-character="1">
+
+  <header id="js-header" class="l-header">
+    <div class="l-header__wrap">
+      <div class="l-header__row">
+        <p class="l-header__logo">
+          <a href="/">下北沢キャンプ場</a>
+        </p>
+        <nav class="l-header__nav u-dp-pc">
+          <ul class="l-header__list l-header__list--nav">
+            <li class="l-header__item--nav">
+              <a href="/">
+                <span class="-en">HOME</span>
+                <span class="-ja">ホーム</span>
+              </a>
+            </li>
+            <li class="l-header__item--nav">
+              <a href="/about">
+                <span class="-en">ABOUT US</span>
+                <span class="-ja">下北キャンプ場</span>
+              </a>
+            </li>
+            <li class="l-header__item--nav">
+              <a href="/hotel">
+                <span class="-en">HOTEL</span>
+                <span class="-ja">宿泊施設</span>
+              </a>
+            </li>
+            <li class="l-header__item--nav">
+              <a href="/blog">
+                <span class="-en">TOPICS</span>
+                <span class="-ja">トピックス</span>
+              </a>
+            </li>
+            <li class="l-header__item--nav">
+              <a href="/shop">
+                <span class="-en">SHOP</span>
+                <span class="-ja">ショップ</span>
+              </a>
+            </li>
+            <li class="l-header__item--nav">
+              <a href="/faq">
+                <span class="-en">FAQ</span>
+                <span class="-ja">よくある質問</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <button class="l-drawer__trigger js-draw__trigger">
+    <span class="-line"></span>
+  </button>
+
+  <nav class="l-drawer__content js-draw__content">
+    <div class="l-drawer__wrap">
+      <ul class="l-drawer__list l-drawer__list--menu">
+        <li class="l-drawer__item">
+          <a href="/">
+            <span class="-en">HOME</span>
+            <span class="-ja">ホーム</span>
+          </a>
+        </li>
+        <li class="l-drawer__item">
+          <a href="/about">
+            <span class="-en">about</span>
+            <span class="-ja">下北キャンプ場</span>
+          </a>
+        </li>
+        <li class="l-drawer__item">
+          <a href="/hotel">
+            <span class="-en">hotel</span>
+            <span class="-ja">宿泊施設一覧</span>
+          </a>
+        </li>
+        <li class="l-drawer__item">
+          <a href="/blog">
+            <span class="-en">TOPICS</span>
+            <span class="-ja">トピックス</span>
+          </a>
+        </li>
+        <li class="l-drawer__item">
+          <a href="/shop">
+            <span class="-en">SHOP</span>
+            <span class="-ja">レンタルショップ</span>
+          </a>
+        </li>
+        <li class="l-drawer__item">
+          <a href="/faq">
+            <span class="-en">FAQ</span>
+            <span class="-ja">よくある質問</span>
+          </a>
+        </li>
+        <li class="l-drawer__item">
+          <a href="#">
+            <span class="-en">CONTACT</span>
+            <span class="-ja">お問い合わせ</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>

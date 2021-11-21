@@ -1,0 +1,21 @@
+.c-arrow {
+  display: block;
+  width: 11px;
+  height: 12px;
+  pointer-events: none;
+  overflow: hidden;
+  @include absolute($right:0, $top:15px);
+
+  &::after {
+    content: '';
+    display: block;
+    width: 11px;
+    height: 12px;
+    background: url(/assets/images/arrow.png) no-repeat 0 0;
+    background-size: 11px 12px;
+  }
+
+  &::before {
+    transform: translateX(-101%);
+  }
+}

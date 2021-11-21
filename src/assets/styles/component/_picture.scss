@@ -1,0 +1,17 @@
+.c-picture {
+  &__img {
+    margin: 0;
+    display: flex;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    &::before {
+      content: '';
+      width: 100%;
+      padding-top: 80%;
+    }
+    &--inner {
+      @include absolute(0,0,0,0);
+    }
+  }
+}
