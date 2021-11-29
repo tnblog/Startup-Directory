@@ -11,70 +11,62 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>タイトル</title>
-  <meta name="description" content="ページの説明1">
-
-  <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@300;400;500;600&display=swap"
-    rel="stylesheet">
+  <meta name="description" content="説明文">
 
   <link rel="icon" href="./assets/images/icon/favicon-32x32.png" sizes="32x32">
   <link rel="dns-prefetch" href="//fonts.googleapis.com">
-  <link
-    href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&family=Poppins:ital,wght@0,100;0,200;1,100&family=Cinzel:wght@400;500;600;700;800&display=swap"
-    rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link href="http://fonts.cdnfonts.com/css/sofia-pro" rel="stylesheet">
   <link href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-
   <link href="./assets/styles/vendors/swiper-bundle.min.css" rel="stylesheet">
-
   <link href="./assets/styles/main.css" rel="stylesheet">
-  <script crossorigin="anonymous" src="//polyfill.io/v3/polyfill.js?features=IntersectionObserver"></script>
 
 </head>
 
 
 
-<body data-character="1">
+<body data-skillBg="1">
 
   <header id="js-header" class="l-header">
     <div class="l-header__wrap">
       <div class="l-header__row">
         <p class="l-header__logo">
-          <a href="/">下北沢キャンプ場</a>
+          <a href="/">tboo</a>
         </p>
-        <nav class="l-header__nav u-dp-pc">
+        <nav class="l-header__nav u-dp-pc__sm">
           <ul class="l-header__list l-header__list--nav">
             <li class="l-header__item--nav">
-              <a href="/">
-                <span class="-en">HOME</span>
-                <span class="-ja">ホーム</span>
+              <a href="#about">
+                <span class="-en">ABOUT</span>
+                <span class="-ja">tbooについて</span>
               </a>
             </li>
             <li class="l-header__item--nav">
-              <a href="/about">
-                <span class="-en">ABOUT US</span>
-                <span class="-ja">下北キャンプ場</span>
+              <a href="#feature">
+                <span class="-en">feature</span>
+                <span class="-ja">特徴</span>
               </a>
             </li>
             <li class="l-header__item--nav">
-              <a href="/hotel">
-                <span class="-en">HOTEL</span>
-                <span class="-ja">宿泊施設</span>
+              <a href="#report">
+                <span class="-en">Report</span>
+                <span class="-ja">レポート</span>
               </a>
             </li>
             <li class="l-header__item--nav">
-              <a href="/blog">
-                <span class="-en">TOPICS</span>
-                <span class="-ja">トピックス</span>
+              <a href="#flow">
+                <span class="-en">Flow</span>
+                <span class="-ja">導入までの流れ</span>
               </a>
             </li>
             <li class="l-header__item--nav">
-              <a href="/shop">
-                <span class="-en">SHOP</span>
-                <span class="-ja">ショップ</span>
+              <a href="#plan">
+                <span class="-en">Price</span>
+                <span class="-ja">料金プラン</span>
               </a>
             </li>
             <li class="l-header__item--nav">
-              <a href="/faq">
+              <a href="#faq">
                 <span class="-en">FAQ</span>
                 <span class="-ja">よくある質問</span>
               </a>
@@ -145,71 +137,68 @@
 
 
 
-<div class="js-first-view l-main">
+<div class="js-first-view">
+
+
+  <main class="l-main"></main>
 
 
 
-</div>
 
-</div>
 
 <footer class="l-footer" id="footer">
-
-  <p id="page-top" class="pageTopScroll u-dp-pc"><a href="#"><i class="fas fa-angle-up"></i></a></p>
-
-  <div class="l-footer__wrap">
-
-    <p class="l-footer__logo">
-      <a href="/">下北沢キャンプ場</a>
+  <div class="container">
+    <a href="#" class="l-footer__logo">
+      TNBLOG
+    </a>
+    <div class="l-footer__sns">
+      <a href="#" class="l-footer__sns--icon -fb">
+        <img src="/assets/images/svg/social/facebook.svg" alt="facebook">
+      </a>
+      <a href="#" class="l-footer__sns--icon -tw">
+        <img src="/assets/images/svg/social/twitter.svg" alt="twitter">
+      </a>
+      <a href="mailto:user@dammy.com?body=お問い合わせ内容" class="l-footer__sns--icon -mail">
+        <img src="/assets/images/svg/social/mail.svg" alt="mail">
+      </a>
+    </div>
+    <p class="l-footer__copyright">
+      Copyright © tnblog, All rights reserved.<br />
     </p>
-    <p class="l-footer__copy">
-      @2021 s.tnblog
-    </p>
-
   </div>
+
 </footer>
 
+</div>
 
 
 
 
 <!-- <script src="/assets/scripts/vendors/gsap.min.js"></script> -->
-<script>
+<!-- <script>
   var userAgent = window.navigator.userAgent.toLowerCase();
 
   if (userAgent.indexOf('msie') != -1 || userAgent.indexOf('trident') != -1) {
     window.location.href('https://www.google.com/?hl=ja')
   }
-</script>
+</script> -->
 
 <!-- vendors -->
-<script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/rellax/1.12.1/rellax.min.js"></script>
-<script src="./assets/scripts/vendors/stickyfill.min.js"></script>
+<script src="./assets/scripts/vendors/jquery.min.js"></script>
+<script src="./assets/scripts/vendors/isotope.pkgd.min.js"></script>
+<script src="./assets/scripts/vendors/jquery.matchHeight-min.js"></script>
+<script src="./assets/scripts/vendors/intersection-observer.js"></script>
 <script src="./assets/scripts/vendors/swiper-bundle.min.js"></script>
-
-<script>
-  new LuminousGallery(document.querySelectorAll('.zoom'));
-</script>
 
 <!-- scripts -->
 <script src="./assets/scripts/swiper.js"></script>
 <script src="./assets/scripts/function.js"></script>
 
-
-<script src="./assets/scripts/index.js"></script>
-
-
-<script>
-  var rellax = new Rellax(' .js-rellax ', {
-
-    // 中央寄せ
-    center: true
-
-  });
-</script>
-
 <script src="./assets/scripts/main.js"></script>
+
+<!-- 
+ -->
+
 
 </body>
 

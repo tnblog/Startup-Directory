@@ -5,10 +5,9 @@
   },
   "pages": {
     "home": {
-      "name": "下北沢キャンプ場 - ",
-      "description": "ページの説明1",
+      "name": "ホーム - ",
+      "description": "説明文",
       "filePath": "./"
-
     }
   }
 }

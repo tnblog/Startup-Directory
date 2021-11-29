@@ -1,0 +1,34 @@
+.l-other {
+
+  &__item {
+    a {
+      position: relative;
+      display: block;
+      padding: 54px;
+      @include bgCover;
+
+      &::after {
+        background: rgba($color: $color-bg, $alpha: 0.5);
+      }
+    }
+
+    &--contact {
+      a {
+        background-image: url(/assets/images/hero_01.jpg);
+      }
+    }
+
+    &--work {
+      a {
+        background-image: url(/assets/images/hero.jpg);
+      }
+    }
+  }
+
+  &__heading {
+    position: relative;
+    margin: 0;
+    color: $color-white;
+    z-index: 1;
+  }
+}

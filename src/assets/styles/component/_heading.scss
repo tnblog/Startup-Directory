@@ -1,52 +1,41 @@
-.c-heading {
-  &__main {
-    margin: 0 0 40px;
+.intro {
+  margin: 0 0 80px;
 
-    @include mq(md) {
-      margin: 80px 0 30px;
-    }
+  @include mq(md) {
+    padding: 0 20px;
+    margin: 80px 0 40px;
+  }
 
-    .-en {
+  &__heading {
+    line-height: 1;
+
+    & .-en {
+      text-transform: uppercase;
+      color: $color-bg;
       display: block;
-      margin-top: 8px;
-      font-size: 4.4rem;
-      font-weight: 300;
-      letter-spacing: 0.06em;
-      @include mq(sm) {
-        font-size: 3.2rem;
-      }
-    }
-
-    .-ja {
-      display: block;
-      color: $color-green-light-2;
-      @include flex($align:center);
-      font-size: 1.6rem;
-      line-height: 1;
       font-weight: 600;
-
-      &.center {
-        justify-content: center;
-      }
-
-      &.end {
-        justify-content: flex-end;
-      }
-
-      &::after {
-        content: "";
-        height: 1px;
-        width: 32px;
-        font-size: 1.6rem;
-        background: $color-green-light-2;
-        margin-left: 12px;
-      }
-
-      @include mq(sm) {
-        font-size: 1.2rem;
-      }
+      font-size: 1.6rem;
     }
 
+    & .-ja {
+      display: inline-block;
+      position: relative;
+      margin: 20px 0 0;
+      font-size: 4rem;
+      font-weight: 700;
 
+      @include mq(sm) {
+        font-size: 4rem;
+        line-height: 1.4;
+      }
+    }
+  }
+
+  &__txt {
+    font-size: 1.6rem;
+    max-width: 800px;
+    width: 100%;
+    line-height: 2;
+    margin: 40px auto 0;
   }
 }

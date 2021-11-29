@@ -1,15 +1,33 @@
 .u-dp-pc {
   display: block;
 
-  @include mq(md) {
-    display: none;
+  &__md {
+    @include mq(md) {
+      display: none;
+    }
   }
+
+  &__sm {
+    @include mq(sm) {
+      display: none;
+    }
+  }
+
 }
 
 .u-dp-sp {
   display: none;
 
-  @include mq(md) {
-    display: block;
+
+  &__md {
+    @include mq(md) {
+      display: block;
+    }
+  }
+
+  &__sm {
+    @include mq(sm) {
+      display: block;
+    }
   }
 }

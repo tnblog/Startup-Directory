@@ -1,82 +1,77 @@
-$pattern: ("up": translateY(6px),
-  "down": translateY(-6px),
-  "left": translateX(40px),
-  "right": translateX(-40px));
+$fades:("Up": translateY(40px),
+  "Down": translateY(-40px),
+  "Left": translateX(40px),
+  "Right": translateX(-40px));
 
-/*-----------------------------------------------------
+@each $key,
+$fade in $fades {
 
-ScrollTrigger
-
------------------------------------------------------*/
-.js-scroll {
-  &__fadeIn {
-    &--up {
-      opacity: 0;
-      transform: translateY(40px);
-      transition: opacity 1.6s, transform 1s;
-      // transition-delay: .4s;
-
-      &.is-anim {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-  }
-
-  &__cover {
+  .js-scroll--fade#{$key} {
     position: relative;
-    overflow: hidden;
-
-    &--slide {
-
-      &::before,
-      &::after {
-        content: '';
-        @include absolute($left:0, $top:0);
-        height: 100%;
-        width: 100%;
-        transition: transform .8s cubic-bezier(0.61, 1, 0.88, 1);
-      }
-
-      &::before {
-        background: $color-green-light-2;
-        transition-delay: .2s;
-        z-index: 10;
-      }
-
-      &::after {
-        background: $color-white;
-        z-index: 11;
-      }
-
-      &.is-anim {
-
-        &::before,
-        &::after {
-          transform: translateX(100%);
-        }
-      }
-    }
-  }
-
-  &__imgZoom {
+    z-index: 2;
     opacity: 0;
+    transform: ($fade);
+    transition: opacity 1.6s, transform 1s;
 
     &.is-anim {
       opacity: 1;
-      transition: transform 1.4s ease;
-      @include animation($name: kf-img-show,
-        $duration: 1s,
-        $timing-function: ease-in-out,
-        $fill-mode: normal);
+      transform: translate(0);
+    }
+  }
 
-      &:hover {
-        transform: scale(1.05);
+}
+
+
+.js-scroll {
+  &--coverL {
+
+    &::before,
+    &::after {
+      content: '';
+      @include absolute($left:0, $top:0);
+      height: 100%;
+      width: 100%;
+      transition: transform .8s cubic-bezier(0.61, 1, 0.88, 1);
+    }
+
+    &::before {
+      // background: $color-bg;
+      transition-delay: .2s;
+      z-index: 10;
+    }
+
+    &::after {
+      background: $color-white;
+      z-index: 11;
+    }
+
+    &.is-anim {
+
+      &::before,
+      &::after {
+        transform: translateX(100%);
       }
     }
   }
 
-  &__scale {
+  &--coverR {
+
+    &::before,
+    &::after {
+      @extend .js-scroll--coverL;
+      @include absolute($right:0, $top:0);
+    }
+
+    &.is-anim {
+
+      &::before,
+      &::after {
+        transform: translateX(-100%);
+      }
+    }
+  }
+
+  &--scale {
     transform: scale(0.9);
     opacity: 0;
     visibility: hidden;
@@ -89,10 +84,51 @@ ScrollTrigger
     }
   }
 
+  &--scaleDelay {
+    opacity: 0;
+
+    &.is-anim {
+      opacity: 1;
+      @include animation($name: kf-img-show,
+        $duration: 1s,
+        $timing-function: ease,
+        $fill-mode: both);
+
+      @for $i from 1 through 99 {
+        &:nth-child(#{$i}) {
+          animation-delay: $i * 0.1s;
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+.js-scroll {
+
+  &__imgZoom {
+    opacity: 0;
+
+    &.is-anim {
+      opacity: 1;
+      transition: transform 1.4s ease;
+      @include animation($name: kf-img-show,
+        $duration: 1s,
+        $timing-function: ease-in-out,
+        $fill-mode: normal);
+    }
+  }
+
+
+
   &__slide {
     visibility: hidden;
     opacity: 0;
-    transition: opacity 1.4s cubic-bezier(0.25, 0.25, 0.75, 0.75),visibility 1.4s cubic-bezier(0.25, 0.25, 0.75, 0.75);
+    transition: opacity 1.4s cubic-bezier(0.25, 0.25, 0.75, 0.75), visibility 1.4s cubic-bezier(0.25, 0.25, 0.75, 0.75);
+
     &.is-anim {
       animation: kf-animate-slide 2s cubic-bezier(0.19, 1, 0.22, 1) both;
       visibility: visible;
@@ -101,11 +137,16 @@ ScrollTrigger
   }
 }
 
+
+
+/* ===============================  char  =============================== */
+
 .animate-heading {
   opacity: 0;
 
   &.inview {
     opacity: 1;
+
     & .char {
       display: inline-block;
     }
@@ -119,22 +160,20 @@ ScrollTrigger
 
 .animate-heading.inview .char {
   @include animation($name: kf-animate-chars,
-    $duration: .65s,
+    $duration: .1s,
     $timing-function: ease,
     $fill-mode: both);
 
-  @for $i from 1 through 99 {
+  @for $i from 1 through 30 {
     &:nth-child(#{$i}) {
-      animation-delay: $i * 0.1s;
+      animation-delay: $i * 0.08s;
     }
   }
 }
 
-/*-----------------------------------------------------
 
-keyframe
 
------------------------------------------------------*/
+/* ===============================  keyframe  =============================== */
 
 @keyframes fluidrotate {
 
@@ -175,15 +214,8 @@ keyframe
     transform: scale(1.1);
   }
 
-  50% {
-    transform: scale(1);
-    // opacity: 1;
-  }
-
-  // 50.1% {
-  // }
-
   100% {
+    transform: scale(1);
     opacity: 1;
   }
 }
@@ -204,13 +236,13 @@ keyframe
   0% {
     opacity: 0;
     transform: translateX(50%);
-    // transform: translateY(50%);
+    // transform: translateY(-50%);
     color: $color-white;
   }
 
   100% {
     opacity: 1;
-    transform: translateY(0);
+    transform: translate(0);
     // transform: translateY(0);
   }
 }

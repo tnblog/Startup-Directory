@@ -4,6 +4,8 @@ html {
   font-size: 62.5%;
   letter-spacing: .07em;
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
 }
 
 *,
@@ -14,16 +16,15 @@ html {
 }
 
 body {
-  display: none;
+  display: flex;
+  flex-direction: column;
   width: 100%;
   height: 100%;
   position: relative;
-  overflow: visible;
   background: $color-white;
-  // color: $color-main;
-  color: $color-bg;
-  // font-family: 'Red Hat Display', sans-serif;
-  font-family: "Red Hat Display", "Yu Gothic medium", "Hiragino Sans", Meiryo, "sans-serif";
+  color: $color-black;
+  // font-family: Menlo,Consolas,Hiragino Kaku Gothic ProN,Hiragino Sans,Meiryo, sans-serif;
+  font-family: "Sofia Pro", "Noto Sans JP", "Hiragino Sans", Meiryo, "sans-serif";
   line-height: 1.7;
   font-size: 1.4rem;
   font-weight: 400;
@@ -43,6 +44,7 @@ img {
 }
 
 a {
+  color: inherit;
   text-decoration: none;
   transition: all .1s ease-in-out;
 
@@ -85,11 +87,13 @@ h5,
 h6 {
   color: inherit;
   font-family: inherit;
-  line-height: 1.4
+  line-height: 1.4;
+  margin: 0;
 }
 
 ol,
 ul {
+  padding: 0;
   list-style: none;
 }
 
@@ -128,9 +132,6 @@ blockquote,
 dl,
 fieldset,
 figure,
-h1,
-h2,
-h3,
 h4,
 h5,
 h6,

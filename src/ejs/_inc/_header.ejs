@@ -11,68 +11,60 @@
   <title><%= title %></title>
   <meta name="description" content="<%= description %>">
 
-  <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@300;400;500;600&display=swap"
-    rel="stylesheet">
-
   <link rel="icon" href="<%= filePath %>assets/images/icon/favicon-32x32.png" sizes="32x32">
   <link rel="dns-prefetch" href="//fonts.googleapis.com">
-  <link
-    href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&family=Poppins:ital,wght@0,100;0,200;1,100&family=Cinzel:wght@400;500;600;700;800&display=swap"
-    rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link href="http://fonts.cdnfonts.com/css/sofia-pro" rel="stylesheet">
   <link href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-
   <link href="<%= filePath %>assets/styles/vendors/swiper-bundle.min.css" rel="stylesheet">
-
   <link href="<%= filePath %>assets/styles/main.css" rel="stylesheet">
-  <script crossorigin="anonymous" src="//polyfill.io/v3/polyfill.js?features=IntersectionObserver"></script>
 
 </head>
 
 
 
-<body data-character="1">
+<body data-skillBg="1">
 
   <header id="js-header" class="l-header">
     <div class="l-header__wrap">
       <div class="l-header__row">
         <p class="l-header__logo">
-          <a href="/">下北沢キャンプ場</a>
+          <a href="/">tboo</a>
         </p>
-        <nav class="l-header__nav u-dp-pc">
+        <nav class="l-header__nav u-dp-pc__sm">
           <ul class="l-header__list l-header__list--nav">
             <li class="l-header__item--nav">
-              <a href="/">
-                <span class="-en">HOME</span>
-                <span class="-ja">ホーム</span>
+              <a href="#about">
+                <span class="-en">ABOUT</span>
+                <span class="-ja">tbooについて</span>
               </a>
             </li>
             <li class="l-header__item--nav">
-              <a href="/about">
-                <span class="-en">ABOUT US</span>
-                <span class="-ja">下北キャンプ場</span>
+              <a href="#feature">
+                <span class="-en">feature</span>
+                <span class="-ja">特徴</span>
               </a>
             </li>
             <li class="l-header__item--nav">
-              <a href="/hotel">
-                <span class="-en">HOTEL</span>
-                <span class="-ja">宿泊施設</span>
+              <a href="#report">
+                <span class="-en">Report</span>
+                <span class="-ja">レポート</span>
               </a>
             </li>
             <li class="l-header__item--nav">
-              <a href="/blog">
-                <span class="-en">TOPICS</span>
-                <span class="-ja">トピックス</span>
+              <a href="#flow">
+                <span class="-en">Flow</span>
+                <span class="-ja">導入までの流れ</span>
               </a>
             </li>
             <li class="l-header__item--nav">
-              <a href="/shop">
-                <span class="-en">SHOP</span>
-                <span class="-ja">ショップ</span>
+              <a href="#plan">
+                <span class="-en">Price</span>
+                <span class="-ja">料金プラン</span>
               </a>
             </li>
             <li class="l-header__item--nav">
-              <a href="/faq">
+              <a href="#faq">
                 <span class="-en">FAQ</span>
                 <span class="-ja">よくある質問</span>
               </a>

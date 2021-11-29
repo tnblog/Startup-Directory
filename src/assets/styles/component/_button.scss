@@ -4,7 +4,7 @@
   letter-spacing: 0.12em;
   font-size: 1.2rem;
   color: inherit;
-  font-weight: 600;
+  font-weight: 400;
   vertical-align: middle;
   @include mq(md) {
     font-size: 1.2rem;
@@ -29,12 +29,12 @@
     }
 
     &::after {
-      background: $color-green-light-2;
+      background: $color-bg;
       transform: translateX(100%);
     }
 
     &::before {
-      background: $color-bg;
+      background: $color-black;
     }
     &:hover::after {
       transform: translateX(0);
@@ -42,12 +42,20 @@
 
     &:hover::before {
       width: 0;
-      background: $color-green-light-2;
+      background: $color-bg;
     }
   }
 
-  &--square {
-
+  &--circle {
+    border-radius: 50px;
+    max-width: 200px;
+    width: 100%;
+    padding: 12px 24px;
+    font-weight: 700;
+    color: $color-white;
+    background: $color-bg;
+    box-shadow: $box-shadow-dark-1;
+    font-size: 1.6rem;
   }
 
   &--cross {

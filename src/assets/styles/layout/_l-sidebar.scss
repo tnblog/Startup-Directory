@@ -1,111 +1,74 @@
 .l-sidebar {
+
   section {
-    margin: 0 0 60px;
+    &:not(:last-of-type) {
+      margin: 0 0 30px;
+    }
   }
 
   &__list {
-    padding: 0;
-    list-style: none;
+    padding: 0 0 10px 10px;
   }
 
   &__item {
-    &--category {
-      text-align: left;
-      // border: 1px solid $color-grey-light-4;
-      font-size: 1.5rem;
+    &--article {
       position: relative;
-      transition: transform .3s ease;
+      width: 100%;
+      @include flex($align:center);
+      &:not(:last-of-type) {
+        margin: 0 0 24px;
+      }
 
-      &:hover,
-      &:focus {
-        transform: translateX(10px);
+      @include mq(md) {
+        flex-direction: row-reverse;
       }
 
       a {
-        display: block;
-        padding: 8px 20px 8px 0;
-        text-transform: uppercase;
-      }
-    }
-
-    &--article {
-      display: flex;
-      margin: 0 0 14px;
-      @include mq(md) {
-        display: initial;
-      }
-      &:nth-child(3) {
-        margin: 0;
-      }
-
-      &Button {
-        margin: 5px 0 0;
-      }
-    }
-
-    &--tag {
-
-    }
-  }
-
-  &__detail {
-    &--article {
-      text-align: left;
-      padding: 5px 10px 5px 14px;
-      @include flex($justify:space-between);
-      flex-direction: column;
-      @include mq(md) {
-        padding: 0;
+        @include absolute(0,0,0,0);
+        width: 100%;
+        height: 100%;
+        z-index: 1;
       }
     }
   }
 
   &__img {
     &--article {
-      width: 180px;
-      transform: all .3s ease;
+      width: 34%;
+      overflow: hidden;
       @include mq(md) {
-        width: 100%;
+        width: 20%;
       }
-      &::before {
-        padding-top: 90%;
-        @include mq(sm) {
-          padding-top: 70%;
-        }
+    }
+  }
+
+  &__body {
+    &--article {
+      width: 66%;
+      @include mq(md) {
+        width: 80%;
       }
     }
   }
 
   &__heading {
-    &--info {
-      font-size: 2rem;
-      padding-bottom: 12px;
-      padding: 0 0 12px;
-      margin: 0 0 20px;
-      text-transform: uppercase;
-      font-weight: 300;
-      text-align: left;
-      position: relative;
-      line-height: 1.7;
-      border-bottom: 1px solid $color-grey-light-4;
+    margin: 0 0 24px;
+    padding: 10px 0;
+    font-size: 1.6rem;
+    letter-spacing: .1em;
+    border-bottom: $line;
+  }
 
-      span {
-        position: relative;
-        font-size: 1.2rem;
-        display: block;
-        padding-left: 26px;
-
-        &::before {
-          content: "";
-          @include absolute($top:50%, $left:0);
-          width: 20px;
-          height: 1px;
-          background: $color-bg;
-        }
-      }
+  &__txt {
+    padding-right: 10px;
+    font-size: 1.2rem;
+    letter-spacing: .05em;
+    line-height: 1.5;
+    @include mq(md) {
+      font-size: 1.4rem;
+      padding-left: 20px;
     }
-
-    &--article {
+    @include mq(sm) {
       font-size: 1.2rem;
     }
   }

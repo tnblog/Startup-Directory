@@ -10,28 +10,19 @@
 // - pulugin
 @import "./foundation/plugin/toc";
 @import "./foundation/plugin/prism";
-@import "./foundation/plugin/slick-theme";
-@import "./foundation/plugin/slick";
 
 //  --------------------
 //  component
 //  --------------------
 @import "./component/picture";
 @import "./component/heading";
-@import "./component/pagination";
-@import "./component/pager";
 @import "./component/arrow";
 @import "./component/table";
-@import "./component/overlay";
-@import "./component/box";
 @import "./component/button";
-@import "./component/breadcrumb";
 @import "./component/thumblist";
 @import "./component/newslist";
-@import "./component/media";
 @import "./component/label";
 @import "./component/search";
-@import "./component/taglist";
 
 //  --------------------
 //  layout
@@ -55,8 +46,8 @@
 //  --------------------
 //  utility
 //  --------------------
+@import "./utility/mask";
 @import "./utility/display";
-@import "./utility/rating";
 
 //  --------------------
 //  project

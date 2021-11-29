@@ -5,8 +5,7 @@
   }
 
   &__wrap {
-    @include minWidth;
-    max-width: 760px;
+    @include maxWidth(760px);
     padding: 0 40px;
 
     @include mq(md) {

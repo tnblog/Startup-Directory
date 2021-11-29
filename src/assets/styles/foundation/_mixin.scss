@@ -1,4 +1,4 @@
-// メディアクエリ
+
 $mq-breakpoints-min: ('xxs': '0px',
   'xs': '400px',
   'sm': '768px',
@@ -25,15 +25,12 @@ $mq-breakpoints-max: ('xxs': '440px',
   }
 }
 
-
-// background-image
 @mixin bgCover {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 
-// 中央寄せ
 @mixin absCenter {
   position: absolute;
   top: 50%;
@@ -41,88 +38,91 @@ $mq-breakpoints-max: ('xxs': '440px',
   transform: translate(-50%, -50%);
 }
 
-// 横幅
-@mixin minWidth {
-  max-width: $maxWidth;
+@mixin maxWidth($width) {
+  max-width: $width;
   width: 100%;
   margin: 0 auto;
 }
 
-// flex - 4カラム
 @mixin column4($width) {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
 
-  &::after,&::before {
+  &::after,
+  &::before {
     content: "";
     display: block;
     flex: 0 0 $width;
     max-width: $width;
   }
-  &::before {order: 1;}
-  &::after {order: 2;}
+
+  &::before {
+    order: 1;
+  }
+
+  &::after {
+    order: 2;
+  }
 }
 
-// font-awesome
-@mixin font_awsm($icon:()) {
-  content: $icon;
-  font-family: "Font Awesome 5 Free";
-  display: inline-block;
-  text-rendering: auto;
-}
-
-// flex 一括指定
-@mixin flex($justify:null, $align:null, $wrap:null){
+@mixin flex($justify:null, $align:null, $wrap:null) {
   display: flex;
-  @if $justify != null{
+
+  @if $justify !=null {
     justify-content: $justify;
   }
-  @if $align != null{
+
+  @if $align !=null {
     align-items: $align;
   }
-  @if $wrap != null{
+
+  @if $wrap !=null {
     flex-wrap: $wrap;
   }
 }
 
-// absolute 一括指定
-@mixin absolute($top:null, $right:null, $bottom:null, $left:null){
+@mixin absolute($top:null, $right:null, $bottom:null, $left:null) {
   position: absolute;
-  @if $top != null{
+
+  @if $top !=null {
     top: $top;
   }
-  @if $right != null{
+
+  @if $right !=null {
     right: $right;
   }
-  @if $bottom != null{
+
+  @if $bottom !=null {
     bottom: $bottom;
   }
-  @if $left != null{
+
+  @if $left !=null {
     left: $left;
   }
 }
 
-// 可変横幅
-@mixin flexBasis($fb:null, $fb-md:null, $fb-sm:null, $fb-xs:null){
-  @if $fb != null{
+@mixin flexBasis($fb:null, $fb-md:null, $fb-sm:null, $fb-xs:null) {
+  @if $fb !=null {
     flex: 0 0 $fb;
     max-width: $fb;
 
     @include mq(md) {
-      @if $fb-md != null{
+      @if $fb-md !=null {
         flex: 0 0 $fb-md;
         max-width: $fb-md;
       }
     }
+
     @include mq(sm) {
-      @if $fb-md != null{
+      @if $fb-md !=null {
         flex: 0 0 $fb-sm;
         max-width: $fb-sm;
       }
     }
+
     @include mq(xs) {
-      @if $fb-xs != null{
+      @if $fb-xs !=null {
         flex: 0 0 $fb-xs;
         max-width: $fb-xs;
       }
@@ -130,31 +130,43 @@ $mq-breakpoints-max: ('xxs': '440px',
   }
 }
 
-// アイコン
-@mixin icon($fileName, $width, $height) {
-	background: url($fileName) no-repeat 50% 50%;
-	background-size: $width $height;
-	width: $width;
-	height: $height;
-}
-
-
-@mixin animation(
-  $name,
+@mixin animation($name,
   $duration: 1s,
   $timing-function: ease,
   $delay: 0s,
   $iteration-count: 1,
   $direction: normal,
-  $fill-mode: forwards
-) {
+  $fill-mode: forwards) {
   animation: {
     name: $name;
     duration: $duration;
+    // アニメーションが開始してから終了するまでの時間
+
     timing-function: $timing-function;
+    // アニメーションのイージング（加速度）を指定します。初期値は「ease」
+    // ease	開始と終了をゆっくり変化
+    // linear	一定の速度で変化
+    // ease-in	最初はゆっくりで、だんだん速く
+    // ease-out	最初は速く、だんだんゆっくり
+
     delay: $delay;
+    // アニメーションが始まるまでの時間を指定
     iteration-count: $iteration-count;
+    // アニメーションを何回繰り返すか指定
     direction: $direction;
+    // アニメーションの再生方向を指定
     fill-mode: $fill-mode;
+    // アニメーションの開始前と終了後のスタイルを指定
+    //     forwards	アニメーション終了時にその状態のスタイルを適用します。
+    // backwards	アニメーション終了時にアニメーションする前のスタイルを適用します。
+    // both	forwardsとbackwardsが両方適応されます。
   }
+}
+
+
+@mixin icon($fileName, $width, $height) {
+	background: url($fileName) no-repeat 50% 50%;
+	background-size: $width $height;
+	width: $width;
+	height: $height;
 }
